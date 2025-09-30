@@ -31,6 +31,10 @@ jobs:
         working-directory: provider
         run: go mod download
 
+      - name: Generate Schema
+        working-directory: provider
+        run: VERSION=0.0.1 go generate ./cmd/pulumi-resource-${{ env.PROVIDER }}/main.go
+
       - name: Build Provider
         working-directory: provider
         run: go build -o ../bin/pulumi-resource-${{ env.PROVIDER }} ./cmd/pulumi-resource-${{ env.PROVIDER }}

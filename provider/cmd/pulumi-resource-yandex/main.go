@@ -17,9 +17,9 @@
 package main
 
 import (
-	"github.com/pulumi/pulumi-terraform-bridge/v3/pkg/tfbridge"
 	yandex "github.com/airoh-io/pulumi-yandex/provider"
 	"github.com/airoh-io/pulumi-yandex/provider/pkg/version"
+	"github.com/pulumi/pulumi-terraform-bridge/v3/pkg/tfbridge"
 )
 
 func main() {

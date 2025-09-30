@@ -11,7 +11,7 @@ import * as utilities from "./utilities";
  *
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
- * import * as yandex from "@airoh/pulumi-yandex";
+ * import * as yandex from "@airoh-io/pulumi-yandex";
  *
  * const myServiceAgent = yandex.getIamServiceAgent({
  *     cloudId: "some_cloud_id",
@@ -77,7 +77,7 @@ export interface GetIamServiceAgentResult {
  *
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
- * import * as yandex from "@airoh/pulumi-yandex";
+ * import * as yandex from "@airoh-io/pulumi-yandex";
  *
  * const myServiceAgent = yandex.getIamServiceAgent({
  *     cloudId: "some_cloud_id",

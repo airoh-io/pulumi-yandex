@@ -14,7 +14,7 @@ import * as utilities from "./utilities";
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as fs from "fs";
- * import * as yandex from "@airoh/pulumi-yandex";
+ * import * as yandex from "@airoh-io/pulumi-yandex";
  *
  * // Auxiliary resources for Compute Instance
  * const fooVpcNetwork = new yandex.VpcNetwork("fooVpcNetwork", {});

@@ -13,7 +13,7 @@ import * as utilities from "./utilities";
  *
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
- * import * as yandex from "@airoh/pulumi-yandex";
+ * import * as yandex from "@airoh-io/pulumi-yandex";
  *
  * const myCluster = new yandex.MdbKafkaCluster("myCluster", {
  *     networkId: "c64vs98keiqc7f24pvkd",

@@ -1,7 +1,7 @@
-# Quick Start - @airoh/pulumi-yandex
+# Quick Start - @airoh-io/pulumi-yandex
 
 ## Package Information
-- **Name**: `@airoh/pulumi-yandex`
+- **Name**: `@airoh-io/pulumi-yandex`
 - **Repository**: https://github.com/airoh-io/pulumi-yandex
 - **Resources**: 107 (46 new)
 - **Data Sources**: 96 (39 new)
@@ -15,13 +15,13 @@
 **Setup (one time):**
 ```bash
 # Create .npmrc in your home directory
-echo "@airoh:registry=https://npm.pkg.github.com" >> ~/.npmrc
+echo "@airoh-io:registry=https://npm.pkg.github.com" >> ~/.npmrc
 echo "//npm.pkg.github.com/:_authToken=YOUR_GITHUB_TOKEN" >> ~/.npmrc
 ```
 
 **Install:**
 ```bash
-npm install @airoh/pulumi-yandex
+npm install @airoh-io/pulumi-yandex
 ```
 
 ### Option 2: From Git Repository (Simplest)
@@ -30,7 +30,7 @@ npm install @airoh/pulumi-yandex
 ```json
 {
   "dependencies": {
-    "@airoh/pulumi-yandex": "git+https://github.com/airoh-io/pulumi-yandex.git#master:sdk/nodejs/bin"
+    "@airoh-io/pulumi-yandex": "git+https://github.com/airoh-io/pulumi-yandex.git#master:sdk/nodejs/bin"
   }
 }
 ```
@@ -42,14 +42,14 @@ cd /path/to/pulumi-yandex/sdk/nodejs/bin
 npm link
 
 # In your project
-npm link @airoh/pulumi-yandex
+npm link @airoh-io/pulumi-yandex
 ```
 
 ## Usage Example
 
 ```typescript
 import * as pulumi from "@pulumi/pulumi";
-import * as yandex from "@airoh/pulumi-yandex";
+import * as yandex from "@airoh-io/pulumi-yandex";
 
 // Create a VPC Network
 const network = new yandex.VpcNetwork("my-network", {
@@ -185,7 +185,7 @@ mkdir my-yandex-project && cd my-yandex-project
 pulumi new typescript -y
 
 # Install the package
-npm install @airoh/pulumi-yandex
+npm install @airoh-io/pulumi-yandex
 
 # Configure Yandex Cloud
 pulumi config set yandex:token YOUR_TOKEN
@@ -204,7 +204,7 @@ pulumi up
   "version": "1.0.0",
   "dependencies": {
     "@pulumi/pulumi": "^3.0.0",
-    "@airoh/pulumi-yandex": "^1.0.0"
+    "@airoh-io/pulumi-yandex": "^1.0.0"
   },
   "devDependencies": {
     "@types/node": "^18.0.0",
@@ -245,7 +245,7 @@ Full TypeScript definitions are included:
 
 ## Troubleshooting
 
-### "Cannot find module '@airoh/pulumi-yandex'"
+### "Cannot find module '@airoh-io/pulumi-yandex'"
 
 **For GitHub Packages:**
 ```bash
@@ -253,7 +253,7 @@ Full TypeScript definitions are included:
 cat ~/.npmrc | grep airoh
 
 # Should show:
-# @airoh:registry=https://npm.pkg.github.com
+# @airoh-io:registry=https://npm.pkg.github.com
 # //npm.pkg.github.com/:_authToken=...
 ```
 
@@ -263,7 +263,7 @@ cd /path/to/pulumi-yandex/sdk/nodejs/bin
 npm link
 
 cd /path/to/your-project
-npm link @airoh/pulumi-yandex
+npm link @airoh-io/pulumi-yandex
 ```
 
 ### "pulumi-resource-yandex: not found"

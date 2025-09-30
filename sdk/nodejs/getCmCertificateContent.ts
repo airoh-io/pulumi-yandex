@@ -13,7 +13,7 @@ import * as utilities from "./utilities";
  *
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
- * import * as yandex from "@airoh/pulumi-yandex";
+ * import * as yandex from "@airoh-io/pulumi-yandex";
  *
  * const exampleById = yandex.getCmCertificateContent({
  *     certificateId: "certificate-id",
@@ -108,7 +108,7 @@ export interface GetCmCertificateContentResult {
  *
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
- * import * as yandex from "@airoh/pulumi-yandex";
+ * import * as yandex from "@airoh-io/pulumi-yandex";
  *
  * const exampleById = yandex.getCmCertificateContent({
  *     certificateId: "certificate-id",

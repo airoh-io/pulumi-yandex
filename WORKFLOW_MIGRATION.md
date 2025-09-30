@@ -17,7 +17,7 @@ The GitHub Actions workflows have been **completely modernized** for your fork. 
 - ✅ Simplified and focused
 - ✅ Modern dependencies (Go 1.22, Node 18, Python 3.11, .NET 8)
 - ✅ Tailored for fork maintenance
-- ✅ Package name: `@airoh/pulumi-yandex`
+- ✅ Package name: `@airoh-io/pulumi-yandex`
 - ✅ Automated dependency updates
 - ✅ GitHub Packages publishing
 
@@ -106,7 +106,7 @@ git push origin v1.0.0
 
 | Language | Old | New |
 |----------|-----|-----|
-| npm | `@pulumi/yandex` | `@airoh/pulumi-yandex` |
+| npm | `@pulumi/yandex` | `@airoh-io/pulumi-yandex` |
 | Python | `pulumi-yandex` | `pulumi-yandex` |
 | Go | `github.com/pulumi/pulumi-yandex` | `github.com/airoh-io/pulumi-yandex` |
 
@@ -147,11 +147,11 @@ After release, users install with:
 
 ```bash
 # Configure .npmrc
-echo "@airoh:registry=https://npm.pkg.github.com" >> ~/.npmrc
+echo "@airoh-io:registry=https://npm.pkg.github.com" >> ~/.npmrc
 echo "//npm.pkg.github.com/:_authToken=YOUR_TOKEN" >> ~/.npmrc
 
 # Install
-npm install @airoh/pulumi-yandex
+npm install @airoh-io/pulumi-yandex
 ```
 
 ## 🔒 Required Secrets

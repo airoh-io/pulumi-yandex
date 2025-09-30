@@ -15,7 +15,7 @@ import * as utilities from "./utilities";
  *
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
- * import * as yandex from "@airoh/pulumi-yandex";
+ * import * as yandex from "@airoh-io/pulumi-yandex";
  *
  * const myInstance = yandex.getComputeInstance({
  *     instanceId: "some_instance_id",
@@ -171,7 +171,7 @@ export interface GetComputeInstanceResult {
  *
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
- * import * as yandex from "@airoh/pulumi-yandex";
+ * import * as yandex from "@airoh-io/pulumi-yandex";
  *
  * const myInstance = yandex.getComputeInstance({
  *     instanceId: "some_instance_id",

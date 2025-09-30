@@ -13,7 +13,7 @@ import * as utilities from "./utilities";
  *
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
- * import * as yandex from "@airoh/pulumi-yandex";
+ * import * as yandex from "@airoh-io/pulumi-yandex";
  *
  * const myAgent = yandex.getLoadtestingAgent({
  *     agentId: "some_agent_id",
@@ -82,7 +82,7 @@ export interface GetLoadtestingAgentResult {
  *
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
- * import * as yandex from "@airoh/pulumi-yandex";
+ * import * as yandex from "@airoh-io/pulumi-yandex";
  *
  * const myAgent = yandex.getLoadtestingAgent({
  *     agentId: "some_agent_id",

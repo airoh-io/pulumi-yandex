@@ -17,7 +17,7 @@ import * as utilities from "./utilities";
  *
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
- * import * as yandex from "@airoh/pulumi-yandex";
+ * import * as yandex from "@airoh-io/pulumi-yandex";
  *
  * const tf_router = yandex.getAlbHttpRouter({
  *     httpRouterId: "my-http-router-id",
@@ -102,7 +102,7 @@ export interface GetAlbHttpRouterResult {
  *
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
- * import * as yandex from "@airoh/pulumi-yandex";
+ * import * as yandex from "@airoh-io/pulumi-yandex";
  *
  * const tf_router = yandex.getAlbHttpRouter({
  *     httpRouterId: "my-http-router-id",

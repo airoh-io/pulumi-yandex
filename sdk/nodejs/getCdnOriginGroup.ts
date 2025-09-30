@@ -15,7 +15,7 @@ import * as utilities from "./utilities";
  *
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
- * import * as yandex from "@airoh/pulumi-yandex";
+ * import * as yandex from "@airoh-io/pulumi-yandex";
  *
  * const myGroup = yandex.getCdnOriginGroup({
  *     originGroupId: "some_instance_id",
@@ -86,7 +86,7 @@ export interface GetCdnOriginGroupResult {
  *
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
- * import * as yandex from "@airoh/pulumi-yandex";
+ * import * as yandex from "@airoh-io/pulumi-yandex";
  *
  * const myGroup = yandex.getCdnOriginGroup({
  *     originGroupId: "some_instance_id",

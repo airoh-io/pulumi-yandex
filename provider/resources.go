@@ -552,7 +552,7 @@ func Provider() tfbridge.ProviderInfo {
 			"yandex_vpc_private_endpoint":                      {Tok: makeDataSource(mainMod, "getVpcPrivateEndpoint")},
 		},
 		JavaScript: &tfbridge.JavaScriptInfo{
-			PackageName: "@airoh/pulumi-yandex",
+			PackageName: "@airoh-io/pulumi-yandex",
 			Dependencies: map[string]string{
 				"@pulumi/pulumi": "^3.142.0",
 			},

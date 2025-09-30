@@ -15,7 +15,7 @@ import * as utilities from "./utilities";
  *
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
- * import * as yandex from "@airoh/pulumi-yandex";
+ * import * as yandex from "@airoh-io/pulumi-yandex";
  *
  * const myDashboard = yandex.getMonitoringDashboard({
  *     dashboardId: "some_instance_dashboard_id",
@@ -105,7 +105,7 @@ export interface GetMonitoringDashboardResult {
  *
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
- * import * as yandex from "@airoh/pulumi-yandex";
+ * import * as yandex from "@airoh-io/pulumi-yandex";
  *
  * const myDashboard = yandex.getMonitoringDashboard({
  *     dashboardId: "some_instance_dashboard_id",

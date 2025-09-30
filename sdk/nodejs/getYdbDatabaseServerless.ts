@@ -15,7 +15,7 @@ import * as utilities from "./utilities";
  *
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
- * import * as yandex from "@airoh/pulumi-yandex";
+ * import * as yandex from "@airoh-io/pulumi-yandex";
  *
  * const myDatabase = yandex.getYdbDatabaseServerless({
  *     databaseId: "some_ydb_serverless_database_id",
@@ -133,7 +133,7 @@ export interface GetYdbDatabaseServerlessResult {
  *
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
- * import * as yandex from "@airoh/pulumi-yandex";
+ * import * as yandex from "@airoh-io/pulumi-yandex";
  *
  * const myDatabase = yandex.getYdbDatabaseServerless({
  *     databaseId: "some_ydb_serverless_database_id",

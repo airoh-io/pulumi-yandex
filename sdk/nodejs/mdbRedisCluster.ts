@@ -13,7 +13,7 @@ import * as utilities from "./utilities";
  *
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
- * import * as yandex from "@airoh/pulumi-yandex";
+ * import * as yandex from "@airoh-io/pulumi-yandex";
  *
  * const fooVpcNetwork = new yandex.VpcNetwork("fooVpcNetwork", {});
  * const fooVpcSubnet = new yandex.VpcSubnet("fooVpcSubnet", {
@@ -47,7 +47,7 @@ import * as utilities from "./utilities";
  *
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
- * import * as yandex from "@airoh/pulumi-yandex";
+ * import * as yandex from "@airoh-io/pulumi-yandex";
  *
  * // Auxiliary resources
  * const fooVpcNetwork = new yandex.VpcNetwork("fooVpcNetwork", {});

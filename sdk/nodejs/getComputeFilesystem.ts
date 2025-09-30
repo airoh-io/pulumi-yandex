@@ -13,7 +13,7 @@ import * as utilities from "./utilities";
  *
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
- * import * as yandex from "@airoh/pulumi-yandex";
+ * import * as yandex from "@airoh-io/pulumi-yandex";
  *
  * const myFs = yandex.getComputeFilesystem({
  *     filesystemId: "some_fs_id",
@@ -116,7 +116,7 @@ export interface GetComputeFilesystemResult {
  *
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
- * import * as yandex from "@airoh/pulumi-yandex";
+ * import * as yandex from "@airoh-io/pulumi-yandex";
  *
  * const myFs = yandex.getComputeFilesystem({
  *     filesystemId: "some_fs_id",

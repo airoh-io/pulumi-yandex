@@ -1,7 +1,7 @@
-# Publishing @airoh/pulumi-yandex as Private npm Package
+# Publishing @airoh-io/pulumi-yandex as Private npm Package
 
 ## Package Information
-- **Name**: `@airoh/pulumi-yandex`
+- **Name**: `@airoh-io/pulumi-yandex`
 - **Current Version**: `v0.0.1-alpha.1650911783+5f483d9c.dirty`
 - **Built Package Location**: `sdk/nodejs/bin/`
 
@@ -62,7 +62,7 @@ npm login
 4. **Install in Projects**
    ```bash
    # Team members can install with:
-   npm install @airoh/pulumi-yandex
+   npm install @airoh-io/pulumi-yandex
    ```
 
 ## Option 2: GitHub Packages (Free)
@@ -82,7 +82,7 @@ npm login
    
    Create or edit `~/.npmrc`:
    ```bash
-   @airoh:registry=https://npm.pkg.github.com
+   @airoh-io:registry=https://npm.pkg.github.com
    //npm.pkg.github.com/:_authToken=YOUR_GITHUB_TOKEN
    ```
 
@@ -111,13 +111,13 @@ npm login
    
    Users need to configure their `.npmrc`:
    ```bash
-   @airoh:registry=https://npm.pkg.github.com
+   @airoh-io:registry=https://npm.pkg.github.com
    //npm.pkg.github.com/:_authToken=YOUR_GITHUB_TOKEN
    ```
    
    Then install:
    ```bash
-   npm install @airoh/pulumi-yandex
+   npm install @airoh-io/pulumi-yandex
    ```
 
 ## Option 3: Verdaccio (Self-Hosted)
@@ -158,7 +158,7 @@ npm login
 
 5. **Install**
    ```bash
-   npm install @airoh/pulumi-yandex --registry http://localhost:4873
+   npm install @airoh-io/pulumi-yandex --registry http://localhost:4873
    ```
 
 ## Option 4: Private Git Repository
@@ -184,7 +184,7 @@ npm login
    # Or in package.json:
    {
      "dependencies": {
-       "@airoh/pulumi-yandex": "git+https://github.com/airoh-io/pulumi-yandex.git#master:sdk/nodejs/bin"
+       "@airoh-io/pulumi-yandex": "git+https://github.com/airoh-io/pulumi-yandex.git#master:sdk/nodejs/bin"
      }
    }
    ```
@@ -222,7 +222,7 @@ Before publishing:
 
 ```typescript
 import * as pulumi from "@pulumi/pulumi";
-import * as yandex from "@airoh/pulumi-yandex";
+import * as yandex from "@airoh-io/pulumi-yandex";
 
 // Create resources
 const vpc = new yandex.VpcNetwork("my-vpc", {
@@ -253,7 +253,7 @@ export const secretId = secret.id;
   "name": "my-pulumi-project",
   "dependencies": {
     "@pulumi/pulumi": "^3.0.0",
-    "@airoh/pulumi-yandex": "^1.0.0"
+    "@airoh-io/pulumi-yandex": "^1.0.0"
   }
 }
 ```

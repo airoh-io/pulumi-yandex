@@ -17,7 +17,7 @@ import * as utilities from "./utilities";
  *
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
- * import * as yandex from "@airoh/pulumi-yandex";
+ * import * as yandex from "@airoh-io/pulumi-yandex";
  *
  * const pe = yandex.getVpcPrivateEndpoint({
  *     privateEndpointId: "my-private-endpoint-id",
@@ -110,7 +110,7 @@ export interface GetVpcPrivateEndpointResult {
  *
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
- * import * as yandex from "@airoh/pulumi-yandex";
+ * import * as yandex from "@airoh-io/pulumi-yandex";
  *
  * const pe = yandex.getVpcPrivateEndpoint({
  *     privateEndpointId: "my-private-endpoint-id",

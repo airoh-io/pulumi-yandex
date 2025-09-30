@@ -13,7 +13,7 @@ import * as utilities from "./utilities";
  *
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
- * import * as yandex from "@airoh/pulumi-yandex";
+ * import * as yandex from "@airoh-io/pulumi-yandex";
  *
  * const myGroup = yandex.getLoggingGroup({
  *     groupId: "some_yandex_logging_group_id",
@@ -107,7 +107,7 @@ export interface GetLoggingGroupResult {
  *
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
- * import * as yandex from "@airoh/pulumi-yandex";
+ * import * as yandex from "@airoh-io/pulumi-yandex";
  *
  * const myGroup = yandex.getLoggingGroup({
  *     groupId: "some_yandex_logging_group_id",

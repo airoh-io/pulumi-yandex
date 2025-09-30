@@ -17,7 +17,7 @@ import * as utilities from "./utilities";
  *
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
- * import * as yandex from "@airoh/pulumi-yandex";
+ * import * as yandex from "@airoh-io/pulumi-yandex";
  *
  * const my_vhost = yandex.getAlbVirtualHost({
  *     name: yandex_alb_virtual_host["my-vh"].name,
@@ -97,7 +97,7 @@ export interface GetAlbVirtualHostResult {
  *
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
- * import * as yandex from "@airoh/pulumi-yandex";
+ * import * as yandex from "@airoh-io/pulumi-yandex";
  *
  * const my_vhost = yandex.getAlbVirtualHost({
  *     name: yandex_alb_virtual_host["my-vh"].name,

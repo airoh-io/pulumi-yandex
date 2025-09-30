@@ -15,7 +15,7 @@ import * as utilities from "./utilities";
  *
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
- * import * as yandex from "@airoh/pulumi-yandex";
+ * import * as yandex from "@airoh-io/pulumi-yandex";
  *
  * const myCluster = yandex.getKubernetesCluster({
  *     clusterId: "some_k8s_cluster_id",
@@ -157,7 +157,7 @@ export interface GetKubernetesClusterResult {
  *
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
- * import * as yandex from "@airoh/pulumi-yandex";
+ * import * as yandex from "@airoh-io/pulumi-yandex";
  *
  * const myCluster = yandex.getKubernetesCluster({
  *     clusterId: "some_k8s_cluster_id",

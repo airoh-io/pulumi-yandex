@@ -15,7 +15,7 @@ import * as utilities from "./utilities";
  *
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
- * import * as yandex from "@airoh/pulumi-yandex";
+ * import * as yandex from "@airoh-io/pulumi-yandex";
  *
  * const myScalingPolicy = yandex.getFunctionScalingPolicy({
  *     functionId: "d4e45**********pqvd3",
@@ -64,7 +64,7 @@ export interface GetFunctionScalingPolicyResult {
  *
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
- * import * as yandex from "@airoh/pulumi-yandex";
+ * import * as yandex from "@airoh-io/pulumi-yandex";
  *
  * const myScalingPolicy = yandex.getFunctionScalingPolicy({
  *     functionId: "d4e45**********pqvd3",

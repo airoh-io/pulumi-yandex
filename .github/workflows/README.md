@@ -106,13 +106,13 @@ The npm package is automatically published to GitHub Packages on release.
 
 Users need to configure `.npmrc`:
 ```bash
-@airoh:registry=https://npm.pkg.github.com
+@airoh-io:registry=https://npm.pkg.github.com
 //npm.pkg.github.com/:_authToken=YOUR_GITHUB_TOKEN
 ```
 
 Then install:
 ```bash
-npm install @airoh/pulumi-yandex
+npm install @airoh-io/pulumi-yandex
 ```
 
 ## Publishing to PyPI (Optional)
@@ -155,7 +155,7 @@ The old workflows have been backed up to `.github/workflows.old/`.
 2. **Modernized** - Updated to latest GitHub Actions versions
 3. **Focused** - Tailored for fork maintenance
 4. **Updated** - Go 1.22, Node 18, Python 3.11, .NET 8
-5. **Package Name** - Uses `@airoh/pulumi-yandex`
+5. **Package Name** - Uses `@airoh-io/pulumi-yandex`
 
 ### Removed Workflows:
 - `artifact-cleanup.yml` - Replaced with simplified `cleanup.yml`

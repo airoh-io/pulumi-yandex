@@ -1,4 +1,4 @@
-# Workflows Summary - @airoh/pulumi-yandex
+# Workflows Summary - @airoh-io/pulumi-yandex
 
 ## ✅ Active Workflows (4)
 
@@ -17,7 +17,7 @@
 - **Actions**:
   - Build provider binary
   - Build Node.js SDK
-  - Publish `@airoh/pulumi-yandex` to GitHub Packages
+  - Publish `@airoh-io/pulumi-yandex` to GitHub Packages
   - Create GitHub Release with downloadable artifacts
 
 **Note**: Python, Go, and .NET SDKs available in release assets but not auto-published.
@@ -76,7 +76,7 @@ When you push a tag like `v1.0.0`:
    - Ready for publishing
 
 3. 🚀 **Publish to GitHub Packages** (1 min)
-   - `@airoh/pulumi-yandex` published
+   - `@airoh-io/pulumi-yandex` published
    - Installable immediately
 
 4. 📝 **GitHub Release** (1 min)

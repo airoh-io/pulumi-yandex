@@ -15,7 +15,7 @@ import * as utilities from "./utilities";
  *
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
- * import * as yandex from "@airoh/pulumi-yandex";
+ * import * as yandex from "@airoh-io/pulumi-yandex";
  *
  * const my_container = yandex.getServerlessContainer({
  *     containerId: "are1samplecontainer11",
@@ -151,7 +151,7 @@ export interface GetServerlessContainerResult {
  *
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
- * import * as yandex from "@airoh/pulumi-yandex";
+ * import * as yandex from "@airoh-io/pulumi-yandex";
  *
  * const my_container = yandex.getServerlessContainer({
  *     containerId: "are1samplecontainer11",

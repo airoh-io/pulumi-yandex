@@ -11,7 +11,7 @@ Your Pulumi Yandex provider is fully modernized! Here's what we accomplished:
 5. ✅ Generated all SDKs (Go, Node.js, Python, C#)
 6. ✅ Modernized CI/CD workflows (4 new workflows)
 7. ✅ Created 7 comprehensive documentation guides
-8. ✅ Renamed package to `@airoh/pulumi-yandex`
+8. ✅ Renamed package to `@airoh-io/pulumi-yandex`
 
 ---
 
@@ -49,7 +49,7 @@ git commit -m "Modernize provider: Update to terraform-provider v0.160.0, bridge
 - Remove 15 obsolete resources
 - Regenerate all SDKs (Go, Node.js, Python, C#)
 - Modernize GitHub workflows (4 new workflows)
-- Rename package to @airoh/pulumi-yandex
+- Rename package to @airoh-io/pulumi-yandex
 - Update repository references to airoh-io
 
 Resources: 61→107 (+46)
@@ -108,7 +108,7 @@ For users to install your package, they need:
 
 **Create `.npmrc` in their home directory:**
 ```bash
-@airoh:registry=https://npm.pkg.github.com
+@airoh-io:registry=https://npm.pkg.github.com
 //npm.pkg.github.com/:_authToken=YOUR_GITHUB_TOKEN
 ```
 
@@ -157,7 +157,7 @@ pulumi preview
 ### Test 3: Install from GitHub Packages
 ```bash
 # After release, in a new project:
-npm install @airoh/pulumi-yandex
+npm install @airoh-io/pulumi-yandex
 ```
 
 ---
@@ -196,7 +196,7 @@ npm publish --registry https://npm.pkg.github.com
 
 ### Use in Projects
 ```typescript
-import * as yandex from "@airoh/pulumi-yandex";
+import * as yandex from "@airoh-io/pulumi-yandex";
 
 const vpc = new yandex.VpcNetwork("vpc", {
     name: "my-network",
@@ -218,7 +218,7 @@ const secret = new yandex.LockboxSecret("secret", {
 - Check GitHub Actions logs
 
 ### npm Publish Fails
-- Verify package name: `@airoh/pulumi-yandex`
+- Verify package name: `@airoh-io/pulumi-yandex`
 - Check GitHub token has `write:packages` permission
 - Ensure tag format is `v*` (e.g., `v1.0.0`)
 
@@ -236,7 +236,7 @@ You'll know everything works when:
 1. ✅ `git push` triggers CI workflow successfully
 2. ✅ `git push origin v1.0.0` creates GitHub Release
 3. ✅ npm package appears in GitHub Packages
-4. ✅ You can `npm install @airoh/pulumi-yandex`
+4. ✅ You can `npm install @airoh-io/pulumi-yandex`
 5. ✅ Example projects work with your package
 
 ---

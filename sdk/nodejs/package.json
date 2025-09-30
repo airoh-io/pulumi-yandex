@@ -1,5 +1,5 @@
 {
-    "name": "@airoh/pulumi-yandex",
+    "name": "@airoh-io/pulumi-yandex",
     "version": "${VERSION}",
     "description": "A Pulumi package for creating and managing yandex cloud resources.",
     "keywords": [
@@ -7,14 +7,8 @@
         "yandex"
     ],
     "homepage": "https://pulumi.io",
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/airoh-io/pulumi-yandex.git"
-    },
+    "repository": "https://github.com/airoh-io/pulumi-yandex",
     "license": "Apache-2.0",
-    "publishConfig": {
-        "registry": "https://npm.pkg.github.com"
-    },
     "scripts": {
         "build": "tsc"
     },

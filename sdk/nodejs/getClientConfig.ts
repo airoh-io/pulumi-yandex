@@ -11,7 +11,7 @@ import * as utilities from "./utilities";
  *
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
- * import * as yandex from "@airoh/pulumi-yandex";
+ * import * as yandex from "@airoh-io/pulumi-yandex";
  *
  * const client = yandex.getClientConfig({});
  * const kubernetes = yandex.getKubernetesCluster({
@@ -57,7 +57,7 @@ export interface GetClientConfigResult {
  *
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
- * import * as yandex from "@airoh/pulumi-yandex";
+ * import * as yandex from "@airoh-io/pulumi-yandex";
  *
  * const client = yandex.getClientConfig({});
  * const kubernetes = yandex.getKubernetesCluster({

@@ -13,7 +13,7 @@ import * as utilities from "./utilities";
  *
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
- * import * as yandex from "@airoh/pulumi-yandex";
+ * import * as yandex from "@airoh-io/pulumi-yandex";
  *
  * const myFolder1 = yandex.getResourcemanagerFolder({
  *     folderId: "folder_id_number_1",
@@ -105,7 +105,7 @@ export interface GetResourcemanagerFolderResult {
  *
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
- * import * as yandex from "@airoh/pulumi-yandex";
+ * import * as yandex from "@airoh-io/pulumi-yandex";
  *
  * const myFolder1 = yandex.getResourcemanagerFolder({
  *     folderId: "folder_id_number_1",

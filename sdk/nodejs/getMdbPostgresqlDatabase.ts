@@ -13,7 +13,7 @@ import * as utilities from "./utilities";
  *
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
- * import * as yandex from "@airoh/pulumi-yandex";
+ * import * as yandex from "@airoh-io/pulumi-yandex";
  *
  * const foo = yandex.getMdbPostgresqlDatabase({
  *     clusterId: "some_cluster_id",
@@ -122,7 +122,7 @@ export interface GetMdbPostgresqlDatabaseResult {
  *
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
- * import * as yandex from "@airoh/pulumi-yandex";
+ * import * as yandex from "@airoh-io/pulumi-yandex";
  *
  * const foo = yandex.getMdbPostgresqlDatabase({
  *     clusterId: "some_cluster_id",

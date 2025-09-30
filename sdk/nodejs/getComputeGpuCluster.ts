@@ -13,7 +13,7 @@ import * as utilities from "./utilities";
  *
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
- * import * as yandex from "@airoh/pulumi-yandex";
+ * import * as yandex from "@airoh-io/pulumi-yandex";
  *
  * const myGpuCluster = yandex.getComputeGpuCluster({
  *     gpuClusterId: "some_gpu_cluster_id",
@@ -106,7 +106,7 @@ export interface GetComputeGpuClusterResult {
  *
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
- * import * as yandex from "@airoh/pulumi-yandex";
+ * import * as yandex from "@airoh-io/pulumi-yandex";
  *
  * const myGpuCluster = yandex.getComputeGpuCluster({
  *     gpuClusterId: "some_gpu_cluster_id",

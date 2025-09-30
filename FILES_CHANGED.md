@@ -18,7 +18,7 @@
    - Updated import paths
    - Updated repository URL
    - Updated Go import base path
-   - Updated npm package name to `@airoh/pulumi-yandex`
+   - Updated npm package name to `@airoh-io/pulumi-yandex`
 
 3. **`provider/pkg/version/version.go`** ✅
    - Added default version: `"0.1.0-dev"`
@@ -36,7 +36,7 @@
    - Updated Pulumi SDK to v3.198.0
 
 7. **`sdk/nodejs/package.json`** ✅
-   - Updated package name to `@airoh/pulumi-yandex`
+   - Updated package name to `@airoh-io/pulumi-yandex`
    - Updated repository URL
 
 ### Example Configuration
@@ -48,7 +48,7 @@
 ### Build Configuration
 9. **`Makefile`** ✅
    - Updated ORG from `pulumi` → `airoh-io`
-   - Updated NODE_MODULE_NAME to `@airoh/pulumi-yandex`
+   - Updated NODE_MODULE_NAME to `@airoh-io/pulumi-yandex`
    - Updated PROJECT paths
 
 ### GitHub Workflows
@@ -118,7 +118,7 @@
 ### Optional Updates:
 - [ ] Update `README.md` with new package name
 - [ ] Create `CHANGELOG.md` documenting changes
-- [ ] Update examples to use `@airoh/pulumi-yandex`
+- [ ] Update examples to use `@airoh-io/pulumi-yandex`
 
 ## Summary Statistics
 

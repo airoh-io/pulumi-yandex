@@ -13,7 +13,7 @@ import * as utilities from "./utilities";
  *
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
- * import * as yandex from "@airoh/pulumi-yandex";
+ * import * as yandex from "@airoh-io/pulumi-yandex";
  *
  * const myIpPermissionById = yandex.getContainerRegistryIpPermission({
  *     registryId: yandex_container_registry.my_registry.id,
@@ -77,7 +77,7 @@ export interface GetContainerRegistryIpPermissionResult {
  *
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
- * import * as yandex from "@airoh/pulumi-yandex";
+ * import * as yandex from "@airoh-io/pulumi-yandex";
  *
  * const myIpPermissionById = yandex.getContainerRegistryIpPermission({
  *     registryId: yandex_container_registry.my_registry.id,

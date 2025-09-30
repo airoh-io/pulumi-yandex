@@ -41,7 +41,7 @@ Your forked Pulumi Yandex provider has been successfully updated from a 3-year-o
 - [x] Changed to `github.com/airoh-io/pulumi-yandex`
 - [x] Updated all import paths
 - [x] Updated Makefile organization
-- [x] Updated npm package name to `@airoh/pulumi-yandex`
+- [x] Updated npm package name to `@airoh-io/pulumi-yandex`
 
 ### 3. Provider Code ✅
 - [x] Fixed provider API: `yandex.Provider()` → `yandex.NewSDKProvider()`
@@ -110,16 +110,16 @@ Your forked Pulumi Yandex provider has been successfully updated from a 3-year-o
 ## 📦 Package Details
 
 ### npm Package
-- **Name**: `@airoh/pulumi-yandex`
+- **Name**: `@airoh-io/pulumi-yandex`
 - **Registry**: GitHub Packages
 - **Installation**:
   ```bash
   # Configure .npmrc
-  echo "@airoh:registry=https://npm.pkg.github.com" >> ~/.npmrc
+  echo "@airoh-io:registry=https://npm.pkg.github.com" >> ~/.npmrc
   echo "//npm.pkg.github.com/:_authToken=YOUR_GITHUB_TOKEN" >> ~/.npmrc
   
   # Install
-  npm install @airoh/pulumi-yandex
+  npm install @airoh-io/pulumi-yandex
   ```
 
 ### Python Package
@@ -190,7 +190,7 @@ git push origin v1.0.0
 
 ### Step 3: Use in Projects
 ```typescript
-import * as yandex from "@airoh/pulumi-yandex";
+import * as yandex from "@airoh-io/pulumi-yandex";
 
 const network = new yandex.VpcNetwork("vpc", {
     name: "my-network",

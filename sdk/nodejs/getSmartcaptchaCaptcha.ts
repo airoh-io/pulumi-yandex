@@ -15,7 +15,7 @@ import * as utilities from "./utilities";
  *
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
- * import * as yandex from "@airoh/pulumi-yandex";
+ * import * as yandex from "@airoh-io/pulumi-yandex";
  *
  * const by_id = yandex.getSmartcaptchaCaptcha({
  *     captchaId: yandex_smartcaptcha_captcha["my-captcha"].id,
@@ -24,7 +24,7 @@ import * as utilities from "./utilities";
  *
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
- * import * as yandex from "@airoh/pulumi-yandex";
+ * import * as yandex from "@airoh-io/pulumi-yandex";
  *
  * const by_name = yandex.getSmartcaptchaCaptcha({
  *     name: yandex_smartcaptcha_captcha["my-captcha"].name,
@@ -137,7 +137,7 @@ export interface GetSmartcaptchaCaptchaResult {
  *
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
- * import * as yandex from "@airoh/pulumi-yandex";
+ * import * as yandex from "@airoh-io/pulumi-yandex";
  *
  * const by_id = yandex.getSmartcaptchaCaptcha({
  *     captchaId: yandex_smartcaptcha_captcha["my-captcha"].id,
@@ -146,7 +146,7 @@ export interface GetSmartcaptchaCaptchaResult {
  *
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
- * import * as yandex from "@airoh/pulumi-yandex";
+ * import * as yandex from "@airoh-io/pulumi-yandex";
  *
  * const by_name = yandex.getSmartcaptchaCaptcha({
  *     name: yandex_smartcaptcha_captcha["my-captcha"].name,

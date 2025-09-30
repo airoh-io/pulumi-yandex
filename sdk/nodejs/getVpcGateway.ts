@@ -17,7 +17,7 @@ import * as utilities from "./utilities";
  *
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
- * import * as yandex from "@airoh/pulumi-yandex";
+ * import * as yandex from "@airoh-io/pulumi-yandex";
  *
  * const _default = yandex.getVpcGateway({
  *     gatewayId: "my-gateway-id",
@@ -105,7 +105,7 @@ export interface GetVpcGatewayResult {
  *
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
- * import * as yandex from "@airoh/pulumi-yandex";
+ * import * as yandex from "@airoh-io/pulumi-yandex";
  *
  * const _default = yandex.getVpcGateway({
  *     gatewayId: "my-gateway-id",

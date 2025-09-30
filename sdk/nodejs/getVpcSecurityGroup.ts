@@ -15,7 +15,7 @@ import * as utilities from "./utilities";
  *
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
- * import * as yandex from "@airoh/pulumi-yandex";
+ * import * as yandex from "@airoh-io/pulumi-yandex";
  *
  * const group1 = yandex.getVpcSecurityGroup({
  *     name: "my-group1",
@@ -108,7 +108,7 @@ export interface GetVpcSecurityGroupResult {
  *
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
- * import * as yandex from "@airoh/pulumi-yandex";
+ * import * as yandex from "@airoh-io/pulumi-yandex";
  *
  * const group1 = yandex.getVpcSecurityGroup({
  *     name: "my-group1",

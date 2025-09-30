@@ -71,7 +71,7 @@ vpc, err := yandex.NewVpcNetwork(ctx, "my-vpc", &yandex.VpcNetworkArgs{
 
 ### TypeScript/Node.js
 ```typescript
-import * as yandex from "@airoh/yandex";
+import * as yandex from "@airoh-io/yandex";
 
 // Example
 const vpc = new yandex.VpcNetwork("my-vpc", {

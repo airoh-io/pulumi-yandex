@@ -14,7 +14,7 @@ import * as utilities from "./utilities";
  *
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
- * import * as yandex from "@airoh/pulumi-yandex";
+ * import * as yandex from "@airoh-io/pulumi-yandex";
  *
  * const myDevice = yandex.getIotCoreDevice({
  *     deviceId: "are1sampleregistry11",
@@ -99,7 +99,7 @@ export interface GetIotCoreDeviceResult {
  *
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
- * import * as yandex from "@airoh/pulumi-yandex";
+ * import * as yandex from "@airoh-io/pulumi-yandex";
  *
  * const myDevice = yandex.getIotCoreDevice({
  *     deviceId: "are1sampleregistry11",

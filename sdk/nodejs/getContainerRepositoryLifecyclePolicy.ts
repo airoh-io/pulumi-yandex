@@ -15,7 +15,7 @@ import * as utilities from "./utilities";
  *
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
- * import * as yandex from "@airoh/pulumi-yandex";
+ * import * as yandex from "@airoh-io/pulumi-yandex";
  *
  * const myLifecyclePolicyById = yandex.getContainerRepositoryLifecyclePolicy({
  *     lifecyclePolicyId: yandex_container_repository_lifecycle_policy.my_lifecycle_policy.id,
@@ -93,7 +93,7 @@ export interface GetContainerRepositoryLifecyclePolicyResult {
  *
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
- * import * as yandex from "@airoh/pulumi-yandex";
+ * import * as yandex from "@airoh-io/pulumi-yandex";
  *
  * const myLifecyclePolicyById = yandex.getContainerRepositoryLifecyclePolicy({
  *     lifecyclePolicyId: yandex_container_repository_lifecycle_policy.my_lifecycle_policy.id,

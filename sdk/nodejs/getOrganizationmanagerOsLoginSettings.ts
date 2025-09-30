@@ -13,7 +13,7 @@ import * as utilities from "./utilities";
  *
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
- * import * as yandex from "@airoh/pulumi-yandex";
+ * import * as yandex from "@airoh-io/pulumi-yandex";
  *
  * const myOsLoginSettingsSettings = yandex.getOrganizationmanagerOsLoginSettings({
  *     organizationId: "some_organization_id",
@@ -65,7 +65,7 @@ export interface GetOrganizationmanagerOsLoginSettingsResult {
  *
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
- * import * as yandex from "@airoh/pulumi-yandex";
+ * import * as yandex from "@airoh-io/pulumi-yandex";
  *
  * const myOsLoginSettingsSettings = yandex.getOrganizationmanagerOsLoginSettings({
  *     organizationId: "some_organization_id",

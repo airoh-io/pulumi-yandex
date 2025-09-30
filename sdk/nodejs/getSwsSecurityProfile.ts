@@ -17,7 +17,7 @@ import * as utilities from "./utilities";
  *
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
- * import * as yandex from "@airoh/pulumi-yandex";
+ * import * as yandex from "@airoh-io/pulumi-yandex";
  *
  * const by_id = yandex.getSwsSecurityProfile({
  *     securityProfileId: yandex_sws_security_profile["my-profile"].id,
@@ -125,7 +125,7 @@ export interface GetSwsSecurityProfileResult {
  *
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
- * import * as yandex from "@airoh/pulumi-yandex";
+ * import * as yandex from "@airoh-io/pulumi-yandex";
  *
  * const by_id = yandex.getSwsSecurityProfile({
  *     securityProfileId: yandex_sws_security_profile["my-profile"].id,

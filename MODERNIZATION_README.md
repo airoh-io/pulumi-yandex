@@ -20,7 +20,7 @@ This Pulumi Yandex provider fork has been **completely modernized** from a 3-yea
 - **-15 obsolete**: Removed deprecated resources
 
 ### Package Rebranding
-- npm: `@airoh/pulumi-yandex` (was `@pulumi/yandex`)
+- npm: `@airoh-io/pulumi-yandex` (was `@pulumi/yandex`)
 - Repository: `github.com/airoh-io/pulumi-yandex`
 - All SDKs updated with new references
 
@@ -37,11 +37,11 @@ This Pulumi Yandex provider fork has been **completely modernized** from a 3-yea
 ### npm (Node.js/TypeScript)
 ```bash
 # Configure npm for GitHub Packages
-echo "@airoh:registry=https://npm.pkg.github.com" >> ~/.npmrc
+echo "@airoh-io:registry=https://npm.pkg.github.com" >> ~/.npmrc
 echo "//npm.pkg.github.com/:_authToken=YOUR_TOKEN" >> ~/.npmrc
 
 # Install
-npm install @airoh/pulumi-yandex
+npm install @airoh-io/pulumi-yandex
 ```
 
 ### Python
@@ -161,7 +161,7 @@ make build_sdks    # Build all SDKs
 - **cleanup.yml**: Daily (midnight)
 
 ### Package Names
-- npm: `@airoh/pulumi-yandex`
+- npm: `@airoh-io/pulumi-yandex`
 - PyPI: `pulumi-yandex`
 - Go: `github.com/airoh-io/pulumi-yandex/sdk/go/yandex`
 

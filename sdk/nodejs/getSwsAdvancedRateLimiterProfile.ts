@@ -15,7 +15,7 @@ import * as utilities from "./utilities";
  *
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
- * import * as yandex from "@airoh/pulumi-yandex";
+ * import * as yandex from "@airoh-io/pulumi-yandex";
  *
  * const by_id = yandex.getSwsAdvancedRateLimiterProfile({
  *     advancedRateLimiterProfileId: yandex_sws_advanced_rate_limiter_profile["my-profile"].id,
@@ -105,7 +105,7 @@ export interface GetSwsAdvancedRateLimiterProfileResult {
  *
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
- * import * as yandex from "@airoh/pulumi-yandex";
+ * import * as yandex from "@airoh-io/pulumi-yandex";
  *
  * const by_id = yandex.getSwsAdvancedRateLimiterProfile({
  *     advancedRateLimiterProfileId: yandex_sws_advanced_rate_limiter_profile["my-profile"].id,

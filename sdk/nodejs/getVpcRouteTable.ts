@@ -17,7 +17,7 @@ import * as utilities from "./utilities";
  *
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
- * import * as yandex from "@airoh/pulumi-yandex";
+ * import * as yandex from "@airoh-io/pulumi-yandex";
  *
  * const myRt = yandex.getVpcRouteTable({
  *     routeTableId: "my-rt-id",
@@ -101,7 +101,7 @@ export interface GetVpcRouteTableResult {
  *
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
- * import * as yandex from "@airoh/pulumi-yandex";
+ * import * as yandex from "@airoh-io/pulumi-yandex";
  *
  * const myRt = yandex.getVpcRouteTable({
  *     routeTableId: "my-rt-id",

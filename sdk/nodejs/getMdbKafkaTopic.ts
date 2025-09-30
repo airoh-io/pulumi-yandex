@@ -13,7 +13,7 @@ import * as utilities from "./utilities";
  *
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
- * import * as yandex from "@airoh/pulumi-yandex";
+ * import * as yandex from "@airoh-io/pulumi-yandex";
  *
  * const foo = yandex.getMdbKafkaTopic({
  *     clusterId: "some_cluster_id",
@@ -80,7 +80,7 @@ export interface GetMdbKafkaTopicResult {
  *
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
- * import * as yandex from "@airoh/pulumi-yandex";
+ * import * as yandex from "@airoh-io/pulumi-yandex";
  *
  * const foo = yandex.getMdbKafkaTopic({
  *     clusterId: "some_cluster_id",

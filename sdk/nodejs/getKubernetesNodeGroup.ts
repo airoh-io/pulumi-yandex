@@ -15,7 +15,7 @@ import * as utilities from "./utilities";
  *
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
- * import * as yandex from "@airoh/pulumi-yandex";
+ * import * as yandex from "@airoh-io/pulumi-yandex";
  *
  * export = async () => {
  *     const myNodeGroup = await yandex.getKubernetesNodeGroup({
@@ -127,7 +127,7 @@ export interface GetKubernetesNodeGroupResult {
  *
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
- * import * as yandex from "@airoh/pulumi-yandex";
+ * import * as yandex from "@airoh-io/pulumi-yandex";
  *
  * export = async () => {
  *     const myNodeGroup = await yandex.getKubernetesNodeGroup({

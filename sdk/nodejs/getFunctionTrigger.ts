@@ -17,7 +17,7 @@ import * as utilities from "./utilities";
  *
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
- * import * as yandex from "@airoh/pulumi-yandex";
+ * import * as yandex from "@airoh-io/pulumi-yandex";
  *
  * const myTrigger = yandex.getFunctionTrigger({
  *     triggerId: "a1scn**********3ur32",
@@ -108,7 +108,7 @@ export interface GetFunctionTriggerResult {
  *
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
- * import * as yandex from "@airoh/pulumi-yandex";
+ * import * as yandex from "@airoh-io/pulumi-yandex";
  *
  * const myTrigger = yandex.getFunctionTrigger({
  *     triggerId: "a1scn**********3ur32",

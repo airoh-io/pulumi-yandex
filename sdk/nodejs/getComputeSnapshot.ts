@@ -15,7 +15,7 @@ import * as utilities from "./utilities";
  *
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
- * import * as yandex from "@airoh/pulumi-yandex";
+ * import * as yandex from "@airoh-io/pulumi-yandex";
  *
  * const mySnapshot = yandex.getComputeSnapshot({
  *     snapshotId: "some_snapshot_id",
@@ -125,7 +125,7 @@ export interface GetComputeSnapshotResult {
  *
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
- * import * as yandex from "@airoh/pulumi-yandex";
+ * import * as yandex from "@airoh-io/pulumi-yandex";
  *
  * const mySnapshot = yandex.getComputeSnapshot({
  *     snapshotId: "some_snapshot_id",

@@ -7,7 +7,10 @@
         "yandex"
     ],
     "homepage": "https://pulumi.io",
-    "repository": "https://github.com/airoh-io/pulumi-yandex",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/airoh-io/pulumi-yandex.git"
+    },
     "license": "Apache-2.0",
     "publishConfig": {
         "registry": "https://npm.pkg.github.com"

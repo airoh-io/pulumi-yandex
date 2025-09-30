@@ -61,6 +61,8 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: ${{ env.NODE_VERSION }}
+          registry-url: "https://npm.pkg.github.com"
+          scope: "@airoh"
 
       - name: Install pulumictl
         uses: jaxxstorm/action-install-gh-release@v1.12.0

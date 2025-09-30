@@ -107,6 +107,7 @@ jobs:
         with:
           node-version: ${{ env.NODE_VERSION }}
           registry-url: "https://npm.pkg.github.com"
+          scope: "@airoh"
 
       - name: Download Node.js SDK
         uses: actions/download-artifact@v4
@@ -128,6 +129,8 @@ jobs:
     name: Create GitHub Release
     runs-on: ubuntu-latest
     needs: [build-provider, build-sdks]
+    permissions:
+      contents: write
     steps:
       - name: Checkout
         uses: actions/checkout@v4

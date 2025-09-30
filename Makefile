@@ -1,9 +1,9 @@
 PROJECT_NAME := yandex Package
 
 PACK             := yandex
-ORG              := pulumi
+ORG              := airoh-io
 PROJECT          := github.com/${ORG}/pulumi-${PACK}
-NODE_MODULE_NAME := @pulumi/${PACK}
+NODE_MODULE_NAME := @airoh/${PACK}
 TF_NAME          := ${PACK}
 PROVIDER_PATH    := provider
 VERSION_PATH     := ${PROVIDER_PATH}/pkg/version.Version

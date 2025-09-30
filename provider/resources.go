@@ -19,9 +19,9 @@ import (
 	"path/filepath"
 	"unicode"
 
+	"github.com/airoh-io/pulumi-yandex/provider/pkg/version"
 	"github.com/pulumi/pulumi-terraform-bridge/v3/pkg/tfbridge"
 	shimv2 "github.com/pulumi/pulumi-terraform-bridge/v3/pkg/tfshim/sdk-v2"
-	"github.com/pulumi/pulumi-yandex/provider/pkg/version"
 	"github.com/pulumi/pulumi/sdk/v3/go/common/tokens"
 	"github.com/yandex-cloud/terraform-provider-yandex/yandex"
 )
@@ -63,7 +63,7 @@ func makeResource(mod string, res string) tokens.Type {
 // Provider returns additional overlaid schema and metadata associated with the provider..
 func Provider() tfbridge.ProviderInfo {
 	// Instantiate the Terraform provider
-	p := shimv2.NewProvider(yandex.Provider())
+	p := shimv2.NewProvider(yandex.NewSDKProvider())
 
 	// Create a Pulumi provider mapping
 	prov := tfbridge.ProviderInfo{
@@ -73,98 +73,134 @@ func Provider() tfbridge.ProviderInfo {
 		Keywords:    []string{"pulumi", "yandex"},
 		License:     "Apache-2.0",
 		Homepage:    "https://pulumi.io",
-		Repository:  "https://github.com/pulumi/pulumi-yandex",
+		Repository:  "https://github.com/airoh-io/pulumi-yandex",
 		GitHubOrg:   "yandex-cloud",
 		Config:      map[string]*tfbridge.SchemaInfo{},
 		Resources: map[string]*tfbridge.ResourceInfo{
-			"yandex_alb_target_group":                      {Tok: makeResource(mainMod, "AlbTargetGroup")},
-			"yandex_alb_backend_group":                     {Tok: makeResource(mainMod, "AlbBackendGroup")},
-			"yandex_alb_http_router":                       {Tok: makeResource(mainMod, "AlbHttpRouter")},
-			"yandex_alb_virtual_host":                      {Tok: makeResource(mainMod, "AlbVirtualHost")},
-			"yandex_alb_load_balancer":                     {Tok: makeResource(mainMod, "AlbLoadBalancer")},
-			"yandex_api_gateway":                           {Tok: makeResource(mainMod, "ApiGateway")},
-			"yandex_compute_disk":                          {Tok: makeResource(mainMod, "ComputeDisk")},
-			"yandex_compute_disk_placement_group":          {Tok: makeResource(mainMod, "ComputeDiskPlacementGroup")},
-			"yandex_compute_image":                         {Tok: makeResource(mainMod, "ComputeImage")},
-			"yandex_compute_instance":                      {Tok: makeResource(mainMod, "ComputeInstance")},
-			"yandex_compute_instance_group":                {Tok: makeResource(mainMod, "ComputeInstanceGroup")},
-			"yandex_compute_placement_group":               {Tok: makeResource(mainMod, "ComputePlacementGroup")},
-			"yandex_compute_snapshot":                      {Tok: makeResource(mainMod, "ComputeSnapshot")},
+			// ALB Resources
+			"yandex_alb_target_group":    {Tok: makeResource(mainMod, "AlbTargetGroup")},
+			"yandex_alb_backend_group":   {Tok: makeResource(mainMod, "AlbBackendGroup")},
+			"yandex_alb_http_router":     {Tok: makeResource(mainMod, "AlbHttpRouter")},
+			"yandex_alb_virtual_host":    {Tok: makeResource(mainMod, "AlbVirtualHost")},
+			"yandex_alb_load_balancer":   {Tok: makeResource(mainMod, "AlbLoadBalancer")},
+			"yandex_api_gateway":         {Tok: makeResource(mainMod, "ApiGateway")},
+			"yandex_audit_trails_trail":  {Tok: makeResource(mainMod, "AuditTrailsTrail")},
+			"yandex_backup_policy":       {Tok: makeResource(mainMod, "BackupPolicy")},
+			"yandex_backup_policy_bindings": {Tok: makeResource(mainMod, "BackupPolicyBindings")},
+			"yandex_cdn_origin_group":    {Tok: makeResource(mainMod, "CdnOriginGroup")},
+			"yandex_cdn_resource":        {Tok: makeResource(mainMod, "CdnResource")},
+			"yandex_cm_certificate":      {Tok: makeResource(mainMod, "CmCertificate")},
+			// Compute Resources
+			"yandex_compute_disk":                   {Tok: makeResource(mainMod, "ComputeDisk")},
+			"yandex_compute_disk_placement_group":   {Tok: makeResource(mainMod, "ComputeDiskPlacementGroup")},
+			"yandex_compute_filesystem":             {Tok: makeResource(mainMod, "ComputeFilesystem")},
+			"yandex_compute_gpu_cluster":            {Tok: makeResource(mainMod, "ComputeGpuCluster")},
+			"yandex_compute_image":                  {Tok: makeResource(mainMod, "ComputeImage")},
+			"yandex_compute_instance":               {Tok: makeResource(mainMod, "ComputeInstance")},
+			"yandex_compute_instance_group":         {Tok: makeResource(mainMod, "ComputeInstanceGroup")},
+			"yandex_compute_placement_group":        {Tok: makeResource(mainMod, "ComputePlacementGroup")},
+			"yandex_compute_snapshot":               {Tok: makeResource(mainMod, "ComputeSnapshot")},
+			"yandex_compute_snapshot_schedule":      {Tok: makeResource(mainMod, "ComputeSnapshotSchedule")},
+			// Container Resources
 			"yandex_container_registry":                    {Tok: makeResource(mainMod, "ContainerRegistry")},
-			"yandex_container_registry_iam_binding":        {Tok: makeResource(mainMod, "ContainerRegistryIamBinding")},
+			"yandex_container_registry_ip_permission":      {Tok: makeResource(mainMod, "ContainerRegistryIpPermission")},
 			"yandex_container_repository":                  {Tok: makeResource(mainMod, "ContainerRepository")},
-			"yandex_container_repository_iam_binding":      {Tok: makeResource(mainMod, "ContainerRepositoryIamBinding")},
+			"yandex_container_repository_lifecycle_policy": {Tok: makeResource(mainMod, "ContainerRepositoryLifecyclePolicy")},
 			"yandex_dataproc_cluster":                      {Tok: makeResource(mainMod, "DataprocCluster")},
+			"yandex_datatransfer_endpoint":                 {Tok: makeResource(mainMod, "DatatransferEndpoint")},
+			"yandex_datatransfer_transfer":                 {Tok: makeResource(mainMod, "DatatransferTransfer")},
 			"yandex_dns_recordset":                         {Tok: makeResource(mainMod, "DnsRecordSet")},
 			"yandex_dns_zone":                              {Tok: makeResource(mainMod, "DnsZone")},
 			"yandex_function":                              {Tok: makeResource(mainMod, "Function")},
-			"yandex_function_iam_binding":                  {Tok: makeResource(mainMod, "FunctionIamBinding")},
 			"yandex_function_trigger":                      {Tok: makeResource(mainMod, "FunctionTrigger")},
 			"yandex_function_scaling_policy":               {Tok: makeResource(mainMod, "FunctionScalingPolicy")},
-			"yandex_iam_service_account":                   {Tok: makeResource(mainMod, "IamServiceAccount")},
-			"yandex_iam_service_account_api_key":           {Tok: makeResource(mainMod, "IamServiceAccountApiKey")},
-			"yandex_iam_service_account_iam_binding":       {Tok: makeResource(mainMod, "IamServiceAccountIamBinding")},
-			"yandex_iam_service_account_iam_member":        {Tok: makeResource(mainMod, "IamServiceAccountIamMember")},
-			"yandex_iam_service_account_iam_policy":        {Tok: makeResource(mainMod, "IamServiceAccountIamPolicy")},
-			"yandex_iam_service_account_key":               {Tok: makeResource(mainMod, "IamServiceAccountKey")},
-			"yandex_iam_service_account_static_access_key": {Tok: makeResource(mainMod, "IamServiceAccountStaticAccessKey")},
-			"yandex_iot_core_device":                       {Tok: makeResource(mainMod, "IotCoreDevice")},
-			"yandex_iot_core_registry":                     {Tok: makeResource(mainMod, "IotCoreRegistry")},
-			"yandex_kms_secret_ciphertext":                 {Tok: makeResource(mainMod, "KmsSecretCiphertext")},
-			"yandex_kms_symmetric_key":                     {Tok: makeResource(mainMod, "KmsSymmetricKey")},
-			"yandex_kms_symmetric_key_iam_binding":         {Tok: makeResource(mainMod, "KmsSymmetricKeyIamBinding")},
-			"yandex_kubernetes_cluster":                    {Tok: makeResource(mainMod, "KubernetesCluster")},
-			"yandex_kubernetes_node_group":                 {Tok: makeResource(mainMod, "KubernetesNodeGroup")},
-			"yandex_lb_network_load_balancer":              {Tok: makeResource(mainMod, "LbNetworkLoadBalancer")},
-			"yandex_lb_target_group":                       {Tok: makeResource(mainMod, "LbTargetGroup")},
-			"yandex_logging_group":                         {Tok: makeResource(mainMod, "LoggingGroup")},
-			"yandex_mdb_clickhouse_cluster":                {Tok: makeResource(mainMod, "MdbClickhouseCluster")},
-			"yandex_mdb_kafka_cluster":                     {Tok: makeResource(mainMod, "MdbKafkaCluster")},
-			"yandex_mdb_kafka_topic":                       {Tok: makeResource(mainMod, "MdbKafkaTopic")},
-			"yandex_mdb_mongodb_cluster":                   {Tok: makeResource(mainMod, "MdbMongodbCluster")},
-			"yandex_mdb_mysql_cluster":                     {Tok: makeResource(mainMod, "MdbMysqlCluster")},
-			"yandex_mdb_elasticsearch_cluster":             {Tok: makeResource(mainMod, "MdbElasticSearchCluster")},
-			// Per @stack72, this resource has broken docs which cause the generated Pulumi docs to generate in an
-			// indeterminate manner:
-			//"yandex_mdb_postgresql_cluster": {
-			//	Tok: makeResource(mainMod, "MdbPostgresqlCluster"),
-			//	Docs: &tfbridge.DocInfo{
-			//		Markdown: []byte{}, // there are some broken docs here that we want to exclude for the time being
-			//	},
-			//},
-			"yandex_mdb_redis_cluster":     {Tok: makeResource(mainMod, "MdbRedisCluster")},
-			"yandex_mdb_sqlserver_cluster": {Tok: makeResource(mainMod, "MdbSqlServerCluster")},
-			"yandex_mdb_greenplum_cluster": {Tok: makeResource(mainMod, "MdbGreenplumCluster")},
-			"yandex_message_queue":         {Tok: makeResource(mainMod, "MessageQueue")},
-			"yandex_organizationmanager_organization_iam_binding": {
-				Tok: makeResource(mainMod, "OrganizationManagerOrganizationIamBinding"),
-			},
-			"yandex_organizationmanager_organization_iam_member": {
-				Tok: makeResource(mainMod, "OrganizationManagerOrganizationIamMember"),
-			},
-			"yandex_resourcemanager_cloud_iam_binding":   {Tok: makeResource(mainMod, "ResourcemanagerCloudIamBinding")},
-			"yandex_resourcemanager_cloud_iam_member":    {Tok: makeResource(mainMod, "ResourcemanagerCloudIamMember")},
-			"yandex_resourcemanager_folder_iam_binding":  {Tok: makeResource(mainMod, "ResourcemanagerFolderIamBinding")},
-			"yandex_resourcemanager_folder_iam_member":   {Tok: makeResource(mainMod, "ResourcemanagerFolderIamMember")},
-			"yandex_resourcemanager_folder_iam_policy":   {Tok: makeResource(mainMod, "ResourcemanagerFolderIamPolicy")},
-			"yandex_resourcemanager_folder":              {Tok: makeResource(mainMod, "ResourcemanagerFolder")},
-			"yandex_storage_bucket":                      {Tok: makeResource(mainMod, "StorageBucket")},
-			"yandex_storage_object":                      {Tok: makeResource(mainMod, "StorageObject")},
-			"yandex_vpc_address":                         {Tok: makeResource(mainMod, "VpcAddress")},
-			"yandex_vpc_network":                         {Tok: makeResource(mainMod, "VpcNetwork")},
-			"yandex_vpc_route_table":                     {Tok: makeResource(mainMod, "VpcRouteTable")},
-			"yandex_vpc_security_group":                  {Tok: makeResource(mainMod, "VpcSecurityGroup")},
-			"yandex_vpc_subnet":                          {Tok: makeResource(mainMod, "VpcSubnet")},
-			"yandex_vpc_default_security_group":          {Tok: makeResource(mainMod, "VpcDefaultSecurityGroup")},
-			"yandex_vpc_security_group_rule":             {Tok: makeResource(mainMod, "VpcSecurityGroupRule")},
-			"yandex_ydb_database_dedicated":              {Tok: makeResource(mainMod, "YdbDatabaseDedicated")},
-			"yandex_cdn_origin_group":                    {Tok: makeResource(mainMod, "CdnOriginGroup")},
-			"yandex_cdn_resource":                        {Tok: makeResource(mainMod, "CdnResource")},
-			"yandex_serverless_container":                {Tok: makeResource(mainMod, "ServerlessContainer")},
-			"yandex_datatransfer_endpoint":               {Tok: makeResource(mainMod, "DatatransferEndpoint")},
-			"yandex_datatransfer_transfer":               {Tok: makeResource(mainMod, "DatatransferTransfer")},
-			"yandex_organizationmanager_saml_federation": {Tok: makeResource(mainMod, "OrganizationmanagerSamlFederation")},
-			"yandex_ydb_database_serverless":             {Tok: makeResource(mainMod, "YdbDatabaseServerless")},
+			// IAM Resources
+			"yandex_iam_service_account":                           {Tok: makeResource(mainMod, "IamServiceAccount")},
+			"yandex_iam_service_account_api_key":                   {Tok: makeResource(mainMod, "IamServiceAccountApiKey")},
+			"yandex_iam_service_account_iam_policy":                {Tok: makeResource(mainMod, "IamServiceAccountIamPolicy")},
+			"yandex_iam_service_account_key":                       {Tok: makeResource(mainMod, "IamServiceAccountKey")},
+			"yandex_iam_service_account_static_access_key":         {Tok: makeResource(mainMod, "IamServiceAccountStaticAccessKey")},
+			"yandex_iam_workload_identity_federated_credential":    {Tok: makeResource(mainMod, "IamWorkloadIdentityFederatedCredential")},
+			"yandex_iam_workload_identity_oidc_federation":         {Tok: makeResource(mainMod, "IamWorkloadIdentityOidcFederation")},
+			// IoT Resources
+			"yandex_iot_core_broker":   {Tok: makeResource(mainMod, "IotCoreBroker")},
+			"yandex_iot_core_device":   {Tok: makeResource(mainMod, "IotCoreDevice")},
+			"yandex_iot_core_registry": {Tok: makeResource(mainMod, "IotCoreRegistry")},
+			// KMS Resources
+			"yandex_kms_asymmetric_encryption_key": {Tok: makeResource(mainMod, "KmsAsymmetricEncryptionKey")},
+			"yandex_kms_asymmetric_signature_key":  {Tok: makeResource(mainMod, "KmsAsymmetricSignatureKey")},
+			"yandex_kms_secret_ciphertext":         {Tok: makeResource(mainMod, "KmsSecretCiphertext")},
+			"yandex_kms_symmetric_key":             {Tok: makeResource(mainMod, "KmsSymmetricKey")},
+			// Kubernetes Resources
+			"yandex_kubernetes_cluster":    {Tok: makeResource(mainMod, "KubernetesCluster")},
+			"yandex_kubernetes_node_group": {Tok: makeResource(mainMod, "KubernetesNodeGroup")},
+			// Load Balancer Resources
+			"yandex_lb_network_load_balancer": {Tok: makeResource(mainMod, "LbNetworkLoadBalancer")},
+			"yandex_lb_target_group":          {Tok: makeResource(mainMod, "LbTargetGroup")},
+			"yandex_loadtesting_agent":        {Tok: makeResource(mainMod, "LoadtestingAgent")},
+			// Lockbox Resources
+			"yandex_lockbox_secret":                 {Tok: makeResource(mainMod, "LockboxSecret")},
+			"yandex_lockbox_secret_version":         {Tok: makeResource(mainMod, "LockboxSecretVersion")},
+			"yandex_lockbox_secret_version_hashed":  {Tok: makeResource(mainMod, "LockboxSecretVersionHashed")},
+			"yandex_logging_group":                  {Tok: makeResource(mainMod, "LoggingGroup")},
+			// Managed Database Resources
+			"yandex_mdb_clickhouse_cluster":  {Tok: makeResource(mainMod, "MdbClickhouseCluster")},
+			"yandex_mdb_greenplum_cluster":   {Tok: makeResource(mainMod, "MdbGreenplumCluster")},
+			"yandex_mdb_kafka_cluster":       {Tok: makeResource(mainMod, "MdbKafkaCluster")},
+			"yandex_mdb_kafka_connector":     {Tok: makeResource(mainMod, "MdbKafkaConnector")},
+			"yandex_mdb_kafka_topic":         {Tok: makeResource(mainMod, "MdbKafkaTopic")},
+			"yandex_mdb_kafka_user":          {Tok: makeResource(mainMod, "MdbKafkaUser")},
+			"yandex_mdb_mongodb_cluster":     {Tok: makeResource(mainMod, "MdbMongodbCluster")},
+			"yandex_mdb_mysql_cluster":       {Tok: makeResource(mainMod, "MdbMysqlCluster")},
+			"yandex_mdb_mysql_database":      {Tok: makeResource(mainMod, "MdbMysqlDatabase")},
+			"yandex_mdb_mysql_user":          {Tok: makeResource(mainMod, "MdbMysqlUser")},
+			"yandex_mdb_postgresql_cluster":  {Tok: makeResource(mainMod, "MdbPostgresqlCluster")},
+			"yandex_mdb_postgresql_database": {Tok: makeResource(mainMod, "MdbPostgresqlDatabase")},
+			"yandex_mdb_postgresql_user":     {Tok: makeResource(mainMod, "MdbPostgresqlUser")},
+			"yandex_mdb_redis_cluster":       {Tok: makeResource(mainMod, "MdbRedisCluster")},
+			"yandex_mdb_sqlserver_cluster":   {Tok: makeResource(mainMod, "MdbSqlServerCluster")},
+			"yandex_message_queue":           {Tok: makeResource(mainMod, "MessageQueue")},
+			"yandex_monitoring_dashboard":    {Tok: makeResource(mainMod, "MonitoringDashboard")},
+			// Organization Manager Resources
+			"yandex_organizationmanager_group":                        {Tok: makeResource(mainMod, "OrganizationmanagerGroup")},
+			"yandex_organizationmanager_group_mapping":                {Tok: makeResource(mainMod, "OrganizationmanagerGroupMapping")},
+			"yandex_organizationmanager_group_mapping_item":           {Tok: makeResource(mainMod, "OrganizationmanagerGroupMappingItem")},
+			"yandex_organizationmanager_group_membership":             {Tok: makeResource(mainMod, "OrganizationmanagerGroupMembership")},
+			"yandex_organizationmanager_os_login_settings":            {Tok: makeResource(mainMod, "OrganizationmanagerOsLoginSettings")},
+			"yandex_organizationmanager_saml_federation":              {Tok: makeResource(mainMod, "OrganizationmanagerSamlFederation")},
+			"yandex_organizationmanager_saml_federation_user_account": {Tok: makeResource(mainMod, "OrganizationmanagerSamlFederationUserAccount")},
+			"yandex_organizationmanager_user_ssh_key":                 {Tok: makeResource(mainMod, "OrganizationmanagerUserSshKey")},
+			// Resource Manager
+			"yandex_resourcemanager_folder_iam_policy": {Tok: makeResource(mainMod, "ResourcemanagerFolderIamPolicy")},
+			// Serverless Resources
+			"yandex_serverless_container":         {Tok: makeResource(mainMod, "ServerlessContainer")},
+			"yandex_serverless_eventrouter_bus":   {Tok: makeResource(mainMod, "ServerlessEventrouterBus")},
+			"yandex_serverless_eventrouter_connector": {Tok: makeResource(mainMod, "ServerlessEventrouterConnector")},
+			"yandex_serverless_eventrouter_rule":      {Tok: makeResource(mainMod, "ServerlessEventrouterRule")},
+			"yandex_smartcaptcha_captcha":             {Tok: makeResource(mainMod, "SmartcaptchaCaptcha")},
+			// Storage Resources
+			"yandex_storage_bucket": {Tok: makeResource(mainMod, "StorageBucket")},
+			"yandex_storage_object": {Tok: makeResource(mainMod, "StorageObject")},
+			// SWS Resources
+			"yandex_sws_advanced_rate_limiter_profile": {Tok: makeResource(mainMod, "SwsAdvancedRateLimiterProfile")},
+			"yandex_sws_security_profile":              {Tok: makeResource(mainMod, "SwsSecurityProfile")},
+			"yandex_sws_waf_profile":                   {Tok: makeResource(mainMod, "SwsWafProfile")},
+			// VPC Resources
+			"yandex_vpc_address":                {Tok: makeResource(mainMod, "VpcAddress")},
+			"yandex_vpc_default_security_group": {Tok: makeResource(mainMod, "VpcDefaultSecurityGroup")},
+			"yandex_vpc_gateway":                {Tok: makeResource(mainMod, "VpcGateway")},
+			"yandex_vpc_network":                {Tok: makeResource(mainMod, "VpcNetwork")},
+			"yandex_vpc_private_endpoint":       {Tok: makeResource(mainMod, "VpcPrivateEndpoint")},
+			"yandex_vpc_route_table":            {Tok: makeResource(mainMod, "VpcRouteTable")},
+			"yandex_vpc_security_group":         {Tok: makeResource(mainMod, "VpcSecurityGroup")},
+			"yandex_vpc_subnet":                 {Tok: makeResource(mainMod, "VpcSubnet")},
+			// YDB Resources
+			"yandex_ydb_database_dedicated":  {Tok: makeResource(mainMod, "YdbDatabaseDedicated")},
+			"yandex_ydb_database_serverless": {Tok: makeResource(mainMod, "YdbDatabaseServerless")},
+			"yandex_ydb_table":               {Tok: makeResource(mainMod, "YdbTable")},
+			"yandex_ydb_table_changefeed":    {Tok: makeResource(mainMod, "YdbTableChangefeed")},
+			"yandex_ydb_table_index":         {Tok: makeResource(mainMod, "YdbTableIndex")},
+			"yandex_ydb_topic":               {Tok: makeResource(mainMod, "YdbTopic")},
 		},
 		DataSources: map[string]*tfbridge.DataSourceInfo{
 			"yandex_alb_target_group": {
@@ -377,12 +413,6 @@ func Provider() tfbridge.ProviderInfo {
 					Source: "datasource_mdb_redis_cluster.html.markdown",
 				},
 			},
-			"yandex_mdb_elasticsearch_cluster": {
-				Tok: makeDataSource(mainMod, "getMdbElasticSearchCluster"),
-				Docs: &tfbridge.DocInfo{
-					Source: "datasource_mdb_elasticsearch_cluster.html.markdown",
-				},
-			},
 			"yandex_mdb_sqlserver_cluster": {
 				Tok: makeDataSource(mainMod, "getMdbSqlserverCluster"),
 				Docs: &tfbridge.DocInfo{
@@ -438,7 +468,6 @@ func Provider() tfbridge.ProviderInfo {
 					Source: "datasource_vpc_subnet.html.markdown",
 				},
 			},
-			"yandex_vpc_security_group_rule": {Tok: makeDataSource(mainMod, "getVpcSecurityGroupRule")},
 			"yandex_ydb_database_dedicated": {
 				Tok: makeDataSource(mainMod, "getYdbDatabaseDedicated"),
 				Docs: &tfbridge.DocInfo{
@@ -481,10 +510,51 @@ func Provider() tfbridge.ProviderInfo {
 					Source: "datasource_organizationmanager_saml_federation_user_account.html.markdown",
 				},
 			},
+			// New Data Sources
+			"yandex_audit_trails_trail":                        {Tok: makeDataSource(mainMod, "getAuditTrailsTrail")},
+			"yandex_backup_policy":                             {Tok: makeDataSource(mainMod, "getBackupPolicy")},
+			"yandex_cm_certificate":                            {Tok: makeDataSource(mainMod, "getCmCertificate")},
+			"yandex_cm_certificate_content":                    {Tok: makeDataSource(mainMod, "getCmCertificateContent")},
+			"yandex_compute_filesystem":                        {Tok: makeDataSource(mainMod, "getComputeFilesystem")},
+			"yandex_compute_gpu_cluster":                       {Tok: makeDataSource(mainMod, "getComputeGpuCluster")},
+			"yandex_compute_snapshot_schedule":                 {Tok: makeDataSource(mainMod, "getComputeSnapshotSchedule")},
+			"yandex_container_registry_ip_permission":          {Tok: makeDataSource(mainMod, "getContainerRegistryIpPermission")},
+			"yandex_container_repository_lifecycle_policy":     {Tok: makeDataSource(mainMod, "getContainerRepositoryLifecyclePolicy")},
+			"yandex_iam_service_agent":                         {Tok: makeDataSource(mainMod, "getIamServiceAgent")},
+			"yandex_iam_workload_identity_federated_credential": {Tok: makeDataSource(mainMod, "getIamWorkloadIdentityFederatedCredential")},
+			"yandex_iam_workload_identity_oidc_federation":     {Tok: makeDataSource(mainMod, "getIamWorkloadIdentityOidcFederation")},
+			"yandex_iot_core_broker":                           {Tok: makeDataSource(mainMod, "getIotCoreBroker")},
+			"yandex_kms_asymmetric_encryption_key":             {Tok: makeDataSource(mainMod, "getKmsAsymmetricEncryptionKey")},
+			"yandex_kms_asymmetric_signature_key":              {Tok: makeDataSource(mainMod, "getKmsAsymmetricSignatureKey")},
+			"yandex_kms_symmetric_key":                         {Tok: makeDataSource(mainMod, "getKmsSymmetricKey")},
+			"yandex_loadtesting_agent":                         {Tok: makeDataSource(mainMod, "getLoadtestingAgent")},
+			"yandex_lockbox_secret":                            {Tok: makeDataSource(mainMod, "getLockboxSecret")},
+			"yandex_lockbox_secret_version":                    {Tok: makeDataSource(mainMod, "getLockboxSecretVersion")},
+			"yandex_mdb_kafka_connector":                       {Tok: makeDataSource(mainMod, "getMdbKafkaConnector")},
+			"yandex_mdb_kafka_user":                            {Tok: makeDataSource(mainMod, "getMdbKafkaUser")},
+			"yandex_mdb_mysql_database":                        {Tok: makeDataSource(mainMod, "getMdbMysqlDatabase")},
+			"yandex_mdb_mysql_user":                            {Tok: makeDataSource(mainMod, "getMdbMysqlUser")},
+			"yandex_mdb_postgresql_database":                   {Tok: makeDataSource(mainMod, "getMdbPostgresqlDatabase")},
+			"yandex_mdb_postgresql_user":                       {Tok: makeDataSource(mainMod, "getMdbPostgresqlUser")},
+			"yandex_monitoring_dashboard":                      {Tok: makeDataSource(mainMod, "getMonitoringDashboard")},
+			"yandex_organizationmanager_group":                 {Tok: makeDataSource(mainMod, "getOrganizationmanagerGroup")},
+			"yandex_organizationmanager_os_login_settings":     {Tok: makeDataSource(mainMod, "getOrganizationmanagerOsLoginSettings")},
+			"yandex_organizationmanager_user_ssh_key":          {Tok: makeDataSource(mainMod, "getOrganizationmanagerUserSshKey")},
+			"yandex_serverless_eventrouter_bus":                {Tok: makeDataSource(mainMod, "getServerlessEventrouterBus")},
+			"yandex_serverless_eventrouter_connector":          {Tok: makeDataSource(mainMod, "getServerlessEventrouterConnector")},
+			"yandex_serverless_eventrouter_rule":               {Tok: makeDataSource(mainMod, "getServerlessEventrouterRule")},
+			"yandex_smartcaptcha_captcha":                      {Tok: makeDataSource(mainMod, "getSmartcaptchaCaptcha")},
+			"yandex_sws_advanced_rate_limiter_profile":         {Tok: makeDataSource(mainMod, "getSwsAdvancedRateLimiterProfile")},
+			"yandex_sws_security_profile":                      {Tok: makeDataSource(mainMod, "getSwsSecurityProfile")},
+			"yandex_sws_waf_profile":                           {Tok: makeDataSource(mainMod, "getSwsWafProfile")},
+			"yandex_sws_waf_rule_set_descriptor":               {Tok: makeDataSource(mainMod, "getSwsWafRuleSetDescriptor")},
+			"yandex_vpc_gateway":                               {Tok: makeDataSource(mainMod, "getVpcGateway")},
+			"yandex_vpc_private_endpoint":                      {Tok: makeDataSource(mainMod, "getVpcPrivateEndpoint")},
 		},
 		JavaScript: &tfbridge.JavaScriptInfo{
+			PackageName: "@airoh/pulumi-yandex",
 			Dependencies: map[string]string{
-				"@pulumi/pulumi": "^3.0.0",
+				"@pulumi/pulumi": "^3.142.0",
 			},
 			DevDependencies: map[string]string{
 				"@types/node": "^10.0.0",
@@ -498,7 +568,7 @@ func Provider() tfbridge.ProviderInfo {
 		},
 		Golang: &tfbridge.GolangInfo{
 			ImportBasePath: filepath.Join(
-				fmt.Sprintf("github.com/pulumi/pulumi-%[1]s/sdk/", mainPkg),
+				fmt.Sprintf("github.com/airoh-io/pulumi-%[1]s/sdk/", mainPkg),
 				tfbridge.GetModuleMajorVersion(version.Version),
 				"go",
 				mainPkg,

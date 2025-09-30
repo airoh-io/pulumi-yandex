@@ -9,7 +9,7 @@ on:
 env:
   PROVIDER: yandex
   GO_VERSION: "1.22"
-  NODE_VERSION: "18"
+  NODE_VERSION: "20"
   PYTHON_VERSION: "3.11"
   DOTNET_VERSION: "8.0"
 
